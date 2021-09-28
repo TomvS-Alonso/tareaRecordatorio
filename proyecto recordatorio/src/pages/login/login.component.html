@@ -16,7 +16,10 @@
                                 <ion-col>
                                     <ion-item>
                                         <ion-label position="floating">Nombre de usuario</ion-label>
-                                        <ion-input type="text"></ion-input>
+                                        <ion-input 
+                                            type="text" 
+                                            [(ngModel)]="usuario"
+                                        ></ion-input>
                                     </ion-item>
                                 </ion-col>
                             </ion-row>
@@ -24,13 +27,21 @@
                                 <ion-col>
                                     <ion-item>
                                         <ion-label position="floating">Contraseña</ion-label>
-                                        <ion-input type="password"></ion-input>
+                                        <ion-input 
+                                            type="password"
+                                            [(ngModel)]="contrasena"
+                                        ></ion-input>
                                     </ion-item>
                                 </ion-col>
                             </ion-row>     
                             <ion-row>
                                 <ion-col>
-                                    <ion-button expand="block" href="principal">Iniciar sesión</ion-button>
+                                    <ion-button 
+                                        expand="block" 
+                                        (click)="iniciarSesion()"
+                                    
+                                    >
+                                        Iniciar sesión</ion-button>
                                 </ion-col>
                             </ion-row>
                             <ion-row>

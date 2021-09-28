@@ -16,7 +16,10 @@
                                         <ion-label position="floating">
                                             Ingrese su nombre
                                         </ion-label>
-                                        <ion-input type="text" required></ion-input>
+                                        <ion-input 
+                                            type="text" 
+                                            [(ngModel)]="usuario.nombre"
+                                        ></ion-input>
                                     </ion-item>
                                 </ion-col>
                             </ion-row>
@@ -26,7 +29,10 @@
                                         <ion-label position="floating">
                                             Ingrese su nombre apellido
                                         </ion-label>
-                                        <ion-input type="text" required></ion-input>
+                                        <ion-input 
+                                            type="text" 
+                                            [(ngModel)]="usuario.apellido"
+                                        ></ion-input>
                                     </ion-item>
                                 </ion-col>
                             </ion-row>
@@ -36,7 +42,10 @@
                                         <ion-label position="floating">
                                             Ingrese su nombre de usuario
                                         </ion-label>
-                                        <ion-input type="text" required></ion-input>
+                                        <ion-input 
+                                            type="text" 
+                                            [(ngModel)]="usuario.usuario"
+                                        ></ion-input>
                                     </ion-item>
                                 </ion-col>
                             </ion-row>
@@ -46,7 +55,10 @@
                                         <ion-label position="floating">
                                             Ingrese su contraseña
                                         </ion-label>
-                                        <ion-input type="password" required></ion-input>
+                                        <ion-input 
+                                            type="password" 
+                                            [(ngModel)]="usuario.contrasena"
+                                        ></ion-input>
                                     </ion-item>
                                 </ion-col>
                             </ion-row>
@@ -58,17 +70,22 @@
                                         </ion-label>
                                         <ion-datetime
                                             displayFormat="DD/MM/YYYY"
-                                        >
-
+                                            [(ngModel)]="usuario.fechaNacimiento"
+                                            >
                                         </ion-datetime>
                                     </ion-item>
                                 </ion-col>
                             </ion-row>
                             <ion-row>
                                 <ion-col>
-                                    <ion-button expand="block">
+                                    <ion-button 
+                                    expand="block"
+                                    (click)="mostrarConsola()"
+                                    
+                                    >
                                         Registar
                                     </ion-button>
+                                    
                                 </ion-col>
                             </ion-row>
                             <ion-row>

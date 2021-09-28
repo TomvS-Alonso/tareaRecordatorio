@@ -10,6 +10,9 @@ import { RegisterComponent } from 'src/pages/register/register.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { UserService } from 'src/services/users/User.service';
+import {  RouterModule } from '@angular/router'
 
 @NgModule({
   declarations: [AppComponent,
@@ -18,8 +21,17 @@ import { AppComponent } from './app.component';
      NoteComponent,
      RegisterComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule,
+    FormsModule
+  ],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    UserService,
+    RouterModule
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
