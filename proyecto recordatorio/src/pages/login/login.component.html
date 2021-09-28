@@ -1,12 +1,12 @@
 <ion-content
     [fullscreen]="true"
 >
-    <ion-grid>
-        <ion-row>
+    <ion-grid class="completa">
+        <ion-row class="completa ion-align-items-center">
             <ion-col size="10" offset="1">
                 <ion-card>
                     <ion-card-header>
-                        <ion-card-title>
+                        <ion-card-title class="ion-text-center">
                             Bienvenido :D
                         </ion-card-title>
                     </ion-card-header>
@@ -33,10 +33,18 @@
                                     <ion-button expand="block" href="principal">Iniciar sesión</ion-button>
                                 </ion-col>
                             </ion-row>
+                            <ion-row>
+                                <ion-col size="10" offset="1" class="ion-text-center">
+                                    <ion-router-link href="registro">
+                                        ¿No tienes cuenta?
+                                    </ion-router-link>
+                                </ion-col>
+                            </ion-row>
                         </ion-grid>
                     </ion-card-content>
                 </ion-card>
             </ion-col>
         </ion-row>
+        
     </ion-grid>
 </ion-content>
