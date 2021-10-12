@@ -20,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'notas',
-    component: NoteComponent
+    loadChildren: () => import('src/app/notes/notes.module').then(m => m.NotesModule)
   }
 ];
 @NgModule({

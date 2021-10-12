@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { UserService } from 'src/services/users/User.service';
 import {  RouterModule } from '@angular/router'
+import { NotesModule } from './notes/notes.module';
 
 @NgModule({
   declarations: [AppComponent,
