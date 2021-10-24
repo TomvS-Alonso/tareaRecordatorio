@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-eliminar',
@@ -7,8 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EliminarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public alertController: AlertController) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
+  async alertaEliminacion() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Eliminar nota',
+      subHeader: '',
+      message: '¿Esta seguro que desea eliminar esta nota?',
+      buttons: ['Cancelar', 'Eliminar']
+    });
+    
+    await alert.present();
+  }
+  
 }

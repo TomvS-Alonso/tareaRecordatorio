@@ -1,3 +1,48 @@
-<p>
-  listar works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Mis notas</ion-title>
+    <ion-item detail routerLink="/notas/agregar" color="success">Agregar nueva nota</ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let nota of servicios.obtenerNotas()">
+
+      <!-- Titulo nota -->
+      <ion-card class="notas"> 
+        <ion-card-header class="botones-nota">
+          <ion-card-title>{{ nota.titulo }}</ion-card-title>
+
+          <!-- Botones de la nota -->
+          <ion-grid>
+            <ion-row>
+              <ion-button detail routerLink="/notas/modificar/{{ nota.id }}" color="secondary">
+                <ion-icon name="settings"></ion-icon>
+              </ion-button>
+              <ion-button color="danger" (click)="alertaEliminacion(nota.id)">
+                <ion-icon name="close"></ion-icon>
+              </ion-button>
+            </ion-row>
+          </ion-grid>
+        </ion-card-header>
+        
+        <!-- Contenido nota -->
+        <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <ion-col>{{ nota.descripcion }}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-card-subtitle>Fecha de vencimiento: {{ nota.fechaVencimiento }}</ion-card-subtitle>
+            </ion-row>
+            <ion-row>
+              <ion-card-subtitle>Estado: {{ nota.estado }}</ion-card-subtitle>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    
+  </ion-list>  
+</ion-content>

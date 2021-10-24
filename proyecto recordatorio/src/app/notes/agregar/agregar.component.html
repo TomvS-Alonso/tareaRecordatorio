@@ -1,3 +1,67 @@
-<p>
-  agregar works!
-</p>
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">
+              Agregar nota
+            </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-item>
+                    <ion-label position="floating">titulo de la nota</ion-label>
+                    <ion-input 
+                      type="text"
+                      [(ngModel)]="titulo"
+                      ngDefaultControl
+                    ></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <ion-item>
+                    <ion-label position="floating">Descripcion de la nota</ion-label>
+                    <ion-input 
+                      type="text"
+                      [(ngModel)]="descripcion"
+                      ngDefaultControl
+                    ></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <ion-item>
+                    <ion-label position="floating">Fecha de vencimiento</ion-label>
+                    <ion-input 
+                      type="date"
+                      displayFormat="DD/MM/YYYY" 
+                      [(ngModel)]="fechaVencimiento" 
+                      ngDefaultControl>
+                    </ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <ion-button expand="block" (click)="crNote()">Agregar nota</ion-button>
+                  <ion-button expand="block" routerLink="/notas">Volver</ion-button>
+                </ion-col>
+              </ion-row>
+
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

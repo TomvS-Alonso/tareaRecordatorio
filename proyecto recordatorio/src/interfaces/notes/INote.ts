@@ -6,7 +6,7 @@ enum Estado {
     "VENCIDA",
     "CUMPLIDA"
 }
-type TipoEstado = "ACTIVO" | "VENCIDA" | "CUMPLIDA";
+export type TipoEstado = "ACTIVO" | "VENCIDA" | "CUMPLIDA";
 export interface INote {
     id?: number;
     titulo: string; 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { INote, TipoEstado } from 'src/interfaces/notes/INote';
+import { NoteService } from 'src/services/notes/Note.service';
 
 @Component({
   selector: 'app-agregar',
@@ -7,8 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgregarComponent implements OnInit {
 
-  constructor() { }
+  public titulo: string;
+  public descripcion: string;
+  public fechaVencimiento: Date;
+  public estado: TipoEstado = "ACTIVO";
 
-  ngOnInit() {}
+  constructor(private service:NoteService) { }
+
+  ngOnInit() { }
+
+  public crNote() {
+    let nota: INote = {
+      titulo: this.titulo,
+      descripcion: this.descripcion,
+      fechaVencimiento: this.fechaVencimiento,
+      estado: this.estado
+    }
+    this.service.agregarNota(nota)
+    console.log(this.service.obtenerNotas())
+  }
+
 
 }
